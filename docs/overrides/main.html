@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.md-header__topic').forEach(function (topic) {
+        var span = document.createElement('span');
+        span.className = 'md-header-build-date';
+        span.textContent = 'Built: {{ config.extra.build_date }}';
+        topic.appendChild(span);
+      });
+    });
+  </script>
+{% endblock %}

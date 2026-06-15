@@ -1,0 +1,1060 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="altium_api.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Altium ERC SDK Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="stylesheets/theme-tweak.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started-with-custom-erc-checks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Altium ERC SDK Docs" class="md-header__button md-logo" aria-label="Altium ERC SDK Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Altium ERC SDK Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="altium_api.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Altium API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="checks.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Checks
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="utils.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Utils
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Altium ERC SDK Docs" class="md-nav__button md-logo" aria-label="Altium ERC SDK Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Altium ERC SDK Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-a-custom-erc-script-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How a Custom ERC Script Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-add-your-first-custom-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Add Your First Custom Script
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimal-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand the Building Blocks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understand the Building Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onexecute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onExecute
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load_project_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        load_project_data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validationresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ValidationResult
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-apis-to-learn-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main APIs to Learn First
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main APIs to Learn First">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        design_data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-practical-development-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Practical Development Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#good-practices-for-customer-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good Practices for Customer Scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-read-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Read Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="altium_api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Altium API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="checks.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utils.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Utils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-a-custom-erc-script-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How a Custom ERC Script Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-add-your-first-custom-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Add Your First Custom Script
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimal-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand the Building Blocks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understand the Building Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onexecute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onExecute
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load_project_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        load_project_data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validationresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ValidationResult
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-apis-to-learn-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main APIs to Learn First
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main APIs to Learn First">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        design_data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-practical-development-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Practical Development Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#good-practices-for-customer-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good Practices for Customer Scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-read-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Read Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="getting-started-with-custom-erc-checks">Getting Started with Custom ERC Checks</h1>
+<p>Custom ERC Check lets you run your own Python-based Electrical Rule Check logic against project data from Altium 365.</p>
+<p>This page is the starting point for workspace admins who want to:</p>
+<ul>
+<li>understand the execution model of a custom ERC script</li>
+<li>load project data such as components, pins, nets, and parameters</li>
+<li>report rule violations in Altium 365</li>
+<li>build a first working script and then extend it into a real production rule</li>
+</ul>
+<p>For the complete reference, see:</p>
+<ul>
+<li><a href="index.html">Documentation Home</a></li>
+<li><a href="altium_api.html">Altium API</a></li>
+<li><a href="utils.html">Utilities</a></li>
+<li><a href="checks.html">Checks API</a></li>
+</ul>
+<h2 id="how-a-custom-erc-script-works">How a Custom ERC Script Works</h2>
+<p>Each custom ERC script must define an <code>onExecute(context, input_parameters)</code> function.</p>
+<p>At runtime, the platform calls this function and expects it to return a ValidationResult containing any violations found.</p>
+<ol>
+<li>Loads design data for the current project.</li>
+<li>Applies one or more validation rules.</li>
+<li>Adds violations to the result and returns it.</li>
+</ol>
+<h2 id="how-to-add-your-first-custom-script">How to Add Your First Custom Script</h2>
+<p><strong>Note:</strong> Before creating your first script, make sure your organization has a valid license for Custom ERC Checks.</p>
+<p>To add a new custom ERC script in Altium 365:</p>
+<ol>
+<li>Open <code>Admin</code>.</li>
+<li>Go to <code>Customization</code>.</li>
+<li>Select the <code>Electrical Rule Checks</code> tab.</li>
+<li>Click <code>Add</code>.</li>
+<li>Enter a name for the new ERC check.</li>
+<li>In the <code>Assigned</code> column, click <code>Assign</code> and then select <code>Create Script</code>.</li>
+</ol>
+<p><a href="images/screenshot-1.jpg"><img alt="Custom ERC check creation dialog" src="images/screenshot-1.jpg" /></a></p>
+<p>The script editor opens with a default ERC script template. Save the script, then use <code>Test Run</code> to execute it.</p>
+<p>When prompted, enter the target project ID, for example <code>35F834EB-D99C-4833-ABAC-B2217332896F</code>.</p>
+<p><a href="images/screenshot-2.jpg"><img alt="Test Run project prompt" src="images/screenshot-2.jpg" /></a></p>
+<p>While the script is running, use these tabs in the editor to inspect the result:</p>
+<ul>
+<li><code>Console</code>: developer-oriented output for progress tracking and debugging</li>
+<li><code>Response</code>: execution result, including the violations detected for the selected project</li>
+</ul>
+<p><a href="images/screenshot-3.jpg"><img alt="Console and Response tabs in Test Run output" src="images/screenshot-3.jpg" /></a></p>
+<h2 id="minimal-template">Minimal Template</h2>
+<p>Use the following script as a starting point:</p>
+<pre><code class="language-python">from altium import ExecutionContext
+from altium_api import load_project_data, ValidationResult, ProjectData
+
+
+def _sample_erc_check(project_data: ProjectData) -&gt; ValidationResult:
+    &quot;&quot;&quot;Example of check for developing ERC scripts.
+
+    Args:
+        project_data: Access to project data like nets, components, and pins.
+
+    Returns:
+        ValidationResult: Contains the violations identified by the function.
+    &quot;&quot;&quot;
+
+    print(f&quot;Sample template check started: components={len(project_data.components)}&quot;)
+
+    validation_result = ValidationResult()
+
+    if project_data.components:
+        validation_result.add_violation(
+            &quot;Example validation violation (template example)&quot;,
+            project_data.components[0],
+        )
+    else:
+        print(&quot;No components found, so the sample violation was skipped&quot;)
+
+    return validation_result
+
+
+def onExecute(context: ExecutionContext, input_parameters: dict) -&gt; ValidationResult:
+    &quot;&quot;&quot;Template entrypoint to start developing custom scripts.
+
+    Args:
+        context: Connection execution context for Altium 365.
+        input_parameters: Script input parameters used by load_project_data.
+
+    Returns:
+        ValidationResult: Contains the violations recognized by the script.
+    &quot;&quot;&quot;
+
+    print(&quot;Fetching design data&quot;)
+    project_data = load_project_data(context, input_parameters)
+
+    validation_result = _sample_erc_check(project_data)
+
+    return validation_result
+</code></pre>
+<h2 id="understand-the-building-blocks">Understand the Building Blocks</h2>
+<h3 id="onexecute"><code>onExecute</code></h3>
+<p>This is the required entrypoint.</p>
+<ul>
+<li><code>context</code> is provided by the platform and is used when the script loads project data.</li>
+<li><code>input_parameters</code> contains the project information needed to load the design data.</li>
+<li>the function must return <code>ValidationResult</code></li>
+</ul>
+<p>If your script does not expose <code>onExecute</code>, or returns the wrong type, it will not behave as a valid custom ERC check.</p>
+<h3 id="load_project_data"><code>load_project_data</code></h3>
+<p><code>load_project_data(context, input_parameters)</code> is the standard way to fetch project information before running your rule logic.</p>
+<p>It returns a <code>ProjectData</code> object, which gives access to the design model used by your script.</p>
+<h3 id="validationresult"><code>ValidationResult</code></h3>
+<p>Use <code>ValidationResult</code> to accumulate rule violations.</p>
+<p>The typical pattern is:</p>
+<pre><code class="language-python">result = ValidationResult()
+result.add_violation(&quot;Description of the issue&quot;, related_object)
+return result
+</code></pre>
+<p>The related object should be a supported design object such as a component, net or pin.</p>
+<h2 id="main-apis-to-learn-first">Main APIs to Learn First</h2>
+<p>When writing custom ERC checks, the two most important API areas are <code>design_data</code> and <code>utils</code>.</p>
+<h3 id="design_data"><code>design_data</code></h3>
+<p>The <code>design_data</code> module defines the project model your script works with. You will usually access these types through <code>altium_api</code>.</p>
+<p>Start with these concepts:</p>
+<ul>
+<li><code>ProjectData</code>: root object for the loaded design</li>
+<li><code>Component</code>: logical schematic component, with designator, comment, description, parameters, and pins</li>
+<li><code>Net</code>: electrical connection with a name and connected items</li>
+<li><code>Pin</code>: pin-level access, including connected net and owning component</li>
+<li><code>Parameter</code>: name/value parameter attached to a design object</li>
+</ul>
+<p>Typical examples:</p>
+<pre><code class="language-python">for component in project_data.components:
+    print(component.designator, component.comment)
+
+for net in project_data.nets:
+    print(net.name)
+</code></pre>
+<p>Use <a href="altium_api.html">Altium API</a> as the main reference for <code>ProjectData</code> and related design objects.</p>
+<h3 id="utilspy"><code>utils.py</code></h3>
+<p>The <code>utils</code> module contains helper functions and constants that are useful when building rules. These helpers reduce boilerplate and keep checks focused on validation logic instead of string parsing or component classification.</p>
+<p>Examples of what <code>utils</code> can help with:</p>
+<ul>
+<li>classify a component by function</li>
+<li>determine whether a net is power, ground, chassis, or USB</li>
+<li>read and parse parameter values</li>
+<li>infer capacitance or voltage-related values from design metadata</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python">from altium_api import utils
+
+
+def find_ground_nets(project_data: ProjectData) -&gt; list[str]:
+    return [net.name for net in project_data.nets if utils.is_ground_net(net)]
+</code></pre>
+<p>Use <a href="utils.html">Utilities</a> when you need reusable helpers before implementing custom parsing or matching logic yourself.</p>
+<h2 id="a-practical-development-flow">A Practical Development Flow</h2>
+<p>The simplest way to build a custom ERC rule is to start small and iterate:</p>
+<ol>
+<li>Copy the minimal template.</li>
+<li>Load the project with <code>load_project_data</code>.</li>
+<li>Pick one narrow rule, for example checking a parameter, net name, or component classification.</li>
+<li>Add violations with a clear message and the design object that caused the issue.</li>
+<li>Expand the script once the first rule produces the expected output.</li>
+</ol>
+<p>Example of a more realistic validation loop:</p>
+<pre><code class="language-python">from altium import ExecutionContext
+from altium_api import load_project_data, ValidationResult, ProjectData, utils
+
+
+def check_missing_voltage(project_data: ProjectData) -&gt; ValidationResult:
+    result = ValidationResult()
+
+    for component in project_data.components:
+        if utils.classify_component(component) == utils.ComponentClassification.IC:
+            voltage = utils.get_param_value(component, &quot;Voltage&quot;)
+            if not voltage:
+                result.add_violation(
+                    f&quot;Missing Voltage parameter on {component.designator}&quot;,
+                    component,
+                )
+
+    return result
+
+
+def onExecute(context: ExecutionContext, input_parameters: dict) -&gt; ValidationResult:
+    project_data = load_project_data(context, input_parameters)
+    return check_missing_voltage(project_data)
+</code></pre>
+<h2 id="good-practices-for-customer-scripts">Good Practices for Customer Scripts</h2>
+<ul>
+<li>Keep <code>onExecute</code> small and move rule logic into helper functions.</li>
+<li>Start with one rule per function so behavior stays easy to test and review.</li>
+<li>Use <code>print()</code> for quick debugging output in the Console tab while developing.</li>
+<li>Prefer helper functions from <code>utils</code> before adding custom heuristics.</li>
+<li>Attach each violation to the most relevant design object so the result is actionable.</li>
+<li>Return an empty <code>ValidationResult</code> when no violations are found.</li>
+</ul>
+<h2 id="what-to-read-next">What to Read Next</h2>
+<p>Once the template is clear, continue with these pages:</p>
+<ul>
+<li><a href="altium_api.html">Altium API</a>: public API surface, including <code>ProjectData</code>, <code>Component</code>, <code>Net</code>, and <code>load_project_data</code></li>
+<li><a href="utils.html">Utilities</a>: helper functions and constants for common ERC patterns</li>
+<li><a href="checks.html">Checks API</a>: reference for <code>ValidationResult</code></li>
+<li><a href="index.html">Documentation Home</a>: docs landing page</li>
+</ul>
+<p>These references are intended to be used alongside this getting-started guide: start here for the workflow, then use the API pages while implementing real checks.</p>
+<p>🔧</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.tabs"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+  
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.md-header__topic').forEach(function (topic) {
+        var span = document.createElement('span');
+        span.className = 'md-header-build-date';
+        span.textContent = 'Built: 2026-06-12 14:40 UTC';
+        topic.appendChild(span);
+      });
+    });
+  </script>
+
+  </body>
+</html>
